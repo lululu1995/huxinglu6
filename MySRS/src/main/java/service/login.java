@@ -45,10 +45,8 @@ public class login extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=utf-8");
 		request.setCharacterEncoding("UTF-8");
-		
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		
 		
 		UserDao dao=new UserDao();
 		String pwd="";
@@ -81,7 +79,6 @@ public class login extends HttpServlet {
 				response.addCookie(cookie2);
 				}
 
-		
 			response.sendRedirect("index.jsp");
 			}else{
 				response.sendRedirect("loginf.jsp");
