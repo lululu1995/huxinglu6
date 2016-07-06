@@ -2,10 +2,10 @@ package dao;
 
 import java.util.HashMap;
 
-import model.Teacher;;
+import model.Professor;;
 
 public interface PersonDao {
 	
-	public HashMap<String, Teacher> findAllTeachers();
+	public HashMap<String, Professor> findAllProfessors();
 
 }

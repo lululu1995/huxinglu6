@@ -2,9 +2,6 @@ package model;
 
 import java.util.ArrayList;
 import java.util.Collection;
-
-import util.DBUtil;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -35,7 +32,7 @@ public class Student {
 	}
 	
 	public void update(Student s) throws SQLException{
-		Connection conn=DBUtil.getSqliteConnection();
+		Connection conn=DbUtil.getConnection();
 		PreparedStatement stmt=conn.prepareStatement("update student set id=?,name=?,password=?");
 		stmt.setInt(1, s.getId());
 		stmt.setString(2, s.getName());
@@ -44,10 +41,6 @@ public class Student {
 		stmt.close();
 		conn.close();
 
-	}
-	public Transcript getTranscript() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }

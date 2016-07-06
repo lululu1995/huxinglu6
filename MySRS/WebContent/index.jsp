@@ -14,8 +14,6 @@
 		 <div class="col-md-6 log">		
            <h5><a href="login.jsp">学生登录</a></h5>
            <h5 float="right"><a href="admin.jsp">后台登录</a></h5>
-           <h5 float="right"><a href="choose.jsp">选课</a></h5>
-           <h5 float="right"><a href="grade.jsp">成绩</a></h5>
           </div>
      </div>
 </div>

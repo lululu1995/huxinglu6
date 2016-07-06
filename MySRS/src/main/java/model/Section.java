@@ -20,7 +20,7 @@ public class Section {
 	private int seatingCapacity;
 	private Course representedCourse;
 	private ScheduleOfClasses offeredIn;
-	private Teacher instructor;
+	private Professor instructor;
 
 	// The enrolledStudents HashMap stores Student object references,
 	// using each Student's ssn as a String key.
@@ -48,7 +48,7 @@ public class Section {
 
 		// A Professor has not yet been identified.
 
-		//setInstructor(null);
+		setInstructor(null);
 
 		// Note that we're instantiating empty support Collection(s).
 
@@ -84,14 +84,14 @@ public class Section {
 		return timeOfDay;
 	}
 
-	/*public void setInstructor(Professor prof) {
+	public void setInstructor(Professor prof) {
 		instructor = prof;
 	}
 	
 	public Professor getInstructor() {
 		return instructor;
 	}
-	*/
+	
 	public void setRepresentedCourse(Course c) {
 		representedCourse = c;
 	}
@@ -135,7 +135,7 @@ public class Section {
 
 	@Override
 	public String toString() {
-		return getRepresentedCourse().getCourid() + " - " +
+		return getRepresentedCourse().getCourseNo() + " - " +
 		       getSectionNo() + " - " +
 		       getDayOfWeek() + " - " +
 		       getTimeOfDay();
@@ -146,12 +146,12 @@ public class Section {
 	// e.g., "ART101 - 1".
 
 	public String getFullSectionNo() {
-		return getRepresentedCourse().getCourid() + 
+		return getRepresentedCourse().getCourseNo() + 
 		       " - " + getSectionNo();
 	}
 	
 	public String getFullSectionInfo() {
-		return getRepresentedCourse().getCourid() + 
+		return getRepresentedCourse().getCourseName() + 
 			   "-" + getDayOfWeek() + "-" +
 		       "" + getTimeOfDay() +
 		       "-" + this.getRoom();
@@ -241,14 +241,14 @@ public class Section {
 		System.out.println("Section Information:");
 		System.out.println("\tSemester:  " + getOfferedIn().getSemester());
 		System.out.println("\tCourse No.:  " + 
-				   getRepresentedCourse().getCourid());
+				   getRepresentedCourse().getCourseNo());
 		System.out.println("\tSection No:  " + getSectionNo());
 		System.out.println("\tOffered:  " + getDayOfWeek() + 
 				   " at " + getTimeOfDay());
 		System.out.println("\tIn Room:  " + getRoom());
-		/*if (getInstructor() != null) 
+		if (getInstructor() != null) 
 			System.out.println("\tProfessor:  " + 
-				   getInstructor().getName());*/
+				   getInstructor().getName());
 		displayStudentRoster();
 	}
 	
@@ -326,14 +326,9 @@ public class Section {
 
 		return true;
 	}
-
+	
 	public boolean isSectionOf(Course c) {
 		if (c == representedCourse) return true;
 		else return false;
-	}
-
-	public void display() {
-		// TODO Auto-generated method stub
-		
 	}
 }

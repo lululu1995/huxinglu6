@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import model.Course;
+import model.CourseCatalog;
 import util.DBUtil;
 
 public class CourseDao {
@@ -84,3 +85,97 @@ private static CourseDao service;
 		return i > 0;
 	}
 }
+	/*
+	public List<Course> getHotBook() throws SQLException {
+		List<Course> course = new ArrayList<Course>();
+		Connection conn = DBUtil.getConnection();
+		Statement stmt = conn.createStatement();
+		ResultSet rs = stmt.executeQuery("select * from course order by frequency desc");
+		try {
+			while (rs.next()) {
+				course c = this.getHotBookFromRs(rs);
+				course.add(c);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			rs.close();
+			stmt.close();
+			conn.close();
+		}
+		return course;
+	}
+	
+	private course getHotBookFromRs(ResultSet rs) {
+		course c = new course();
+		try {
+			c.setBid(rs.getInt("bid"));
+			
+			c.setBookname(rs.getString("bookname"));
+            c.setPho1(rs.getString("pho1"));
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return c;
+	}
+	
+	public static List<Course> selectBookByName(String bookname) throws SQLException{		
+		Connection conn=DBUtil.getConnection();
+		List<Course> result = new ArrayList<Course>();
+		String bne="";
+		bne="%"+bookname+"%";
+		StringBuilder sb=new StringBuilder();
+		sb.append("select * from course where bookname like ?");
+		PreparedStatement ptmt=conn.prepareStatement(sb.toString());
+		ptmt.setString(1, bne);
+		ResultSet rs=ptmt.executeQuery();
+		while(rs.next()){
+			course books=new course();
+			books.setBid(rs.getInt("bid"));
+			books.setUsername(rs.getString("username"));
+			books.setBookname(rs.getString("bookname"));
+			books.setWriter(rs.getString("writer"));
+			books.setPress(rs.getString("press"));
+			books.setDescription(rs.getString("description"));
+			books.setState(rs.getString("state"));
+			books.setFrequency(rs.getInt("frequency"));
+				result.add(books);
+		}
+		return  result;
+	
+}
+	public List search(String keyword){
+		List list=new ArrayList();
+		Connection conn=DBUtil.getConnection();
+		String sql="select * from course where bookname like'%'+?+'%' ";
+		
+		
+		try {
+			
+			PreparedStatement ptmt;
+			ptmt = conn.prepareStatement(sql);
+			ptmt.setString(1, keyword);
+			ResultSet rs=ptmt.executeQuery();
+			while(rs.next()){
+				course books=new course();
+				books.setBid(rs.getInt("bid"));
+				books.setUsername(rs.getString("username"));
+				books.setBookname(rs.getString("bookname"));
+				books.setWriter(rs.getString("writer"));
+				books.setPress(rs.getString("press"));
+				books.setDescription(rs.getString("description"));
+				books.setState(rs.getString("state"));
+				books.setFrequency(rs.getInt("frequency"));
+				books.setPho1(rs.getString("pho1"));
+				list.add(books);
+				
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+		
+	}
+	*/

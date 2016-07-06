@@ -14,7 +14,7 @@ public class SRS {
 	// the main class; these can then be accessed throughout the
 	// SRS application as:  SRS.collectionName; e.g., SRS.faculty.  
 
-	public static ArrayList<Teacher> faculty; 
+	public static ArrayList<Professor> faculty; 
 	public static ArrayList<Student> studentBody; 
 	public static ArrayList<Course> courseCatalog; 
 
@@ -27,7 +27,7 @@ public class SRS {
 		      new ScheduleOfClasses("SP2005");
 	
 	public static void main(String[] args) {
-		Teacher p1, p2, p3;
+		Professor p1, p2, p3;
 		Student s1, s2, s3;
 		Course c1, c2, c3, c4, c5;
 		Section sec1, sec2, sec3, sec4, sec5, sec6, sec7;
@@ -40,18 +40,18 @@ public class SRS {
 		// Professors.
 		// -----------
 
-		p1 = new Teacher("Jacquie Barker", "123-45-6789", 
-				   "Adjunct Teacher", "Information Technology");		
+		p1 = new Professor("Jacquie Barker", "123-45-6789", 
+				   "Adjunct Professor", "Information Technology");		
 
-		p2 = new Teacher("John Smith", "567-81-2345",
-				   "Full Teacher", "Chemistry");		
+		p2 = new Professor("John Smith", "567-81-2345",
+				   "Full Professor", "Chemistry");		
 
-		p3 = new Teacher("Snidely Whiplash", "987-65-4321",
-				   "Full Teacher", "Physical Education");		
+		p3 = new Professor("Snidely Whiplash", "987-65-4321",
+				   "Full Professor", "Physical Education");		
 
 		// Add these to the appropriate ArrayList.
 
-		faculty = new ArrayList<Teacher>();
+		faculty = new ArrayList<Professor>();
 		faculty.add(p1);
 		faculty.add(p2);
 		faculty.add(p3);
@@ -140,7 +140,7 @@ public class SRS {
 		scheduleOfClasses.addSection(sec6);
 		scheduleOfClasses.addSection(sec7);
 
-		// Recruit a Teacher to teach each of the sections.
+		// Recruit a professor to teach each of the sections.
 
 		p3.agreeToTeach(sec1);
 		p2.agreeToTeach(sec2);
@@ -226,7 +226,7 @@ public class SRS {
 		scheduleOfClasses.display();
 
 		System.out.println("======================");
-		System.out.println("Teacher Information:");
+		System.out.println("Professor Information:");
 		System.out.println("======================");
 		System.out.println();
 		p1.display();
