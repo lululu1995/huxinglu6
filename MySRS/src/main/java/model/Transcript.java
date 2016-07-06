@@ -91,9 +91,7 @@ public class Transcript {
 			System.out.println("\tSemester:        " +
 					   soc.getSemester());
 			System.out.println("\tCourse No.:      " +
-					   c.getCourseNo());
-			System.out.println("\tCredits:         " +
-					   c.getCredits());
+					   c.getCourid());
 			System.out.println("\tGrade Received:  " +
 					   te.getGrade());
 			System.out.println("\t-----");

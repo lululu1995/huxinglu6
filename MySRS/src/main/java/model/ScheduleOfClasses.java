@@ -76,7 +76,7 @@ public class ScheduleOfClasses {
 		// We formulate a key by concatenating the course no.
 		// and section no., separated by a hyphen.
 
-		String key = s.getRepresentedCourse().getCourseNo() + 
+		String key = s.getRepresentedCourse().getCourid() + 
 			     " - " + s.getSectionNo();
 		sectionsOffered.put(key, s);
 

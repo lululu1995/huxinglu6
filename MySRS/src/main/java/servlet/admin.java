@@ -42,6 +42,8 @@ public class admin extends HttpServlet {
 		if("admin".equals(adminname)&&"123456".equals(password)){
 			response.sendRedirect("coursedel.jsp");
 			
+		}else{
+			response.sendRedirect("404.html");
 		}
 		
 	}

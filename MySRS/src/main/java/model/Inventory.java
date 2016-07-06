@@ -13,7 +13,7 @@ public class Inventory {
 
   public void addCourse (int courid, String courname,
 		            String teaname) {
-    Course Course = new Course(courid, courname, teaname);
+    Course Course = new Course();
     courses.add(Course);
   }
 
